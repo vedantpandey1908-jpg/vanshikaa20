@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For mobile responsiveness -->
 <title>Happy 18th Birthday Veduu</title>
 
 <style>
@@ -39,9 +40,6 @@ h2 {
     z-index: 1;
 }
 
-
-}
-
 .heart::before,
 .heart::after {
     content: "";
@@ -52,7 +50,6 @@ h2 {
     border-radius: 50%;
     z-index: 1;   /* behind image */
 }
-
 
 .heart::before {
     top: -100px;
@@ -78,7 +75,6 @@ h2 {
     box-shadow: 0 0 10px white;
     z-index: 2;   /* above heart */
 }
-
 
 @keyframes pulse {
     0% { transform: rotate(-45deg) scale(1); }
@@ -115,6 +111,19 @@ footer {
     margin: 30px;
     font-size: 1.1rem;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .heart { width: 150px; height: 135px; }
+    .heart::before, .heart::after { width: 150px; height: 135px; }
+    .heart::before { top: -75px; }
+    .heart::after { left: 75px; }
+    .heart img { width: 70px; height: 70px; }
+    .gallery img { width: 150px; height: 150px; }
+    .message { font-size: 1rem; padding: 20px; }
+}
 </style>
 </head>
 
@@ -125,18 +134,23 @@ footer {
 
 <!-- Heart with Image -->
 <div class="heart">
-    <img src="vedi.jpg" alt="Veduu">
+    <img src="vedi.jpg" alt="Photo of Veduu inside a heart">
 </div>
 
 <!-- Birthday Song (click once to play if autoplay blocked) -->
-<audio id="music" loop>
+<audio id="music" loop controls> <!-- Added 'controls' as fallback -->
     <source src="birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
 </audio>
-<p style="opacity:0.6;font-size:14px;">Tap anywhere 💖</p>
+<p style="opacity:0.6;font-size:14px;">Tap anywhere to play the birthday song 💖</p>
 
 <script>
 document.addEventListener("click", () => {
-    document.getElementById("music").play();
+    const audio = document.getElementById("music");
+    audio.play().catch(() => {
+        // Fallback if play fails (e.g., autoplay blocked)
+        console.log("Audio play blocked; use controls.");
+    });
 }, { once: true });
 </script>
 
@@ -153,9 +167,9 @@ Tu hamesha aisi hi slay karti rahe meri frakals 💕🌸
 <h2>📸 Memories</h2>
 
 <div class="gallery">
-    <img src="bday1.jpg">
-    <img src="bday2.jpg">
-    <img src="bday3.jpg">
+    <img src="bday1.jpg" alt="Birthday memory 1">
+    <img src="bday2.jpg" alt="Birthday memory 2">
+    <img src="bday3.jpg" alt="Birthday memory 3">
 </div>
 
 <footer>
