@@ -36,6 +36,9 @@ h2 {
     transform: rotate(-45deg);
     animation: pulse 1.5s infinite;
     box-shadow: 0 0 30px #ff1e56;
+    z-index: 1;
+}
+
 
 }
 
@@ -47,7 +50,9 @@ h2 {
     height: 180px;
     background: red;
     border-radius: 50%;
+    z-index: 1;   /* behind image */
 }
+
 
 .heart::before {
     top: -100px;
@@ -71,6 +76,7 @@ h2 {
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 0 10px white;
+    z-index: 2;   /* above heart */
 }
 
 
