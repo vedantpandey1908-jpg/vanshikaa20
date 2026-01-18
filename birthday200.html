@@ -1,0 +1,155 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy 18th Birthday Vedi</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: radial-gradient(circle, #ff9a9e, #fad0c4);
+        text-align: center;
+        color: #6b0012;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-top: 25px;
+        text-shadow: 0 0 15px #ff4d6d;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+    }
+
+    /* Glowing Heart */
+    .heart {
+        position: relative;
+        width: 200px;
+        height: 180px;
+        background: red;
+        margin: 50px auto;
+        transform: rotate(-45deg);
+        animation: pulse 1.5s infinite;
+        box-shadow: 0 0 30px #ff1e56;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 180px;
+        background: red;
+        border-radius: 50%;
+        box-shadow: 0 0 30px #ff1e56;
+    }
+
+    .heart::before {
+        top: -100px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: 100px;
+        top: 0;
+    }
+
+    .heart span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotate(45deg) translate(-50%, -50%);
+        color: white;
+        font-size: 2.8rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px white;
+    }
+
+    @keyframes pulse {
+        0% { transform: rotate(-45deg) scale(1); }
+        50% { transform: rotate(-45deg) scale(1.12); }
+        100% { transform: rotate(-45deg) scale(1); }
+    }
+
+    .message {
+        max-width: 750px;
+        margin: 30px auto;
+        font-size: 1.2rem;
+        background: rgba(255,255,255,0.9);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 30px;
+    }
+
+    .gallery img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    footer {
+        margin: 30px;
+        font-size: 1.1rem;
+    }
+
+    audio {
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy 18th Birthday 🎉</h1>
+<h2>Vedi 💖</h2>
+
+<div class="heart">
+    <span>Vedi</span>
+</div>
+
+<!-- Birthday Song -->
+<audio controls autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div class="message">
+    <p>
+        Happy 18th Birthday, Vedi! 🎂✨  
+        Today you step into a beautiful new phase of life filled with independence,
+        dreams, and endless possibilities. May your heart always glow with happiness,
+        your days shine with success, and your journey ahead be magical.
+        Never stop smiling and believing in yourself. 💕🌸
+    </p>
+</div>
+
+<h2>📸 Memories</h2>
+
+<div class="gallery">
+    <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d">
+    <img src="https://github.com/vedantpandey1908-jpg/birthday/blob/main/WhatsApp%20Image%202026-01-18%20at%2020.35.44.jpeg">
+</div>
+
+<footer>
+    💖 Made with love for Vedi’s special 18th Birthday 💖
+</footer>
+
+</body>
+</html>
