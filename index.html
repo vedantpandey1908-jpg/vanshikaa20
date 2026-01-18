@@ -1,4 +1,3 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,139 +5,153 @@ index.html
 <title>Happy 18th Birthday Veduu</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: radial-gradient(circle, #ff9a9e, #fad0c4);
-        text-align: center;
-        color: #6b0012;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+    text-align: center;
+    color: #6b0012;
+    overflow-x: hidden;
+}
 
-    h1 {
-        font-size: 3.5rem;
-        margin-top: 25px;
-        text-shadow: 0 0 15px #ff4d6d;
-    }
+h1 {
+    font-size: 3.5rem;
+    margin-top: 25px;
+    text-shadow: 0 0 15px #ff4d6d;
+}
 
-    h2 {
-        font-size: 2.6rem;
-        margin-bottom: 10px;
-    }
+h2 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
 
-    /* Glowing Heart */
-    .heart {
-        position: relative;
-        width: 200px;
-        height: 180px;
-        background: red;
-        margin: 50px auto;
-        transform: rotate(-45deg);
-        animation: pulse 1.5s infinite;
-        box-shadow: 0 0 30px #ff1e56;
-    }
+/* Glowing Heart */
+.heart {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background: red;
+    margin: 50px auto;
+    transform: rotate(-45deg);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 30px #ff1e56;
+    overflow: hidden;
+}
 
-    .heart::before,
-    .heart::after {
-        content: "";
-        position: absolute;
-        width: 200px;
-        height: 180px;
-        background: red;
-        border-radius: 50%;
-        box-shadow: 0 0 30px #ff1e56;
-    }
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    background: red;
+    border-radius: 50%;
+}
 
-    .heart::before {
-        top: -100px;
-        left: 0;
-    }
+.heart::before {
+    top: -100px;
+    left: 0;
+}
 
-    .heart::after {
-        left: 100px;
-        top: 0;
-    }
+.heart::after {
+    left: 100px;
+    top: 0;
+}
 
+/* Image inside heart */
+.heart img {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 10px white;
+}
 
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.12); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
 
-    @keyframes pulse {
-        0% { transform: rotate(-45deg) scale(1); }
-        50% { transform: rotate(-45deg) scale(1.12); }
-        100% { transform: rotate(-45deg) scale(1); }
-    }
+.message {
+    max-width: 750px;
+    margin: 30px auto;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 20px;
+}
 
-    .message {
-        max-width: 750px;
-        margin: 30px auto;
-        font-size: 1.2rem;
-        background: rgba(255,255,255,0.9);
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px;
+}
 
-    .gallery {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 30px;
-    }
+.gallery img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-    .gallery img {
-        width: 220px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 18px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    footer {
-        margin: 30px;
-        font-size: 1.1rem;
-    }
-
-    audio {
-        margin-top: 20px;
-    }
+footer {
+    margin: 30px;
+    font-size: 1.1rem;
+}
 </style>
 </head>
 
 <body>
 
 <h1>🎉 Happy 18th Birthday 🎉</h1>
-<h2>Vedi 💖</h2>
+<h2>Veduu 💖</h2>
 
+<!-- Heart with Image -->
+<div class="heart">
+    <img src="vedi.jpg" alt="Veduu">
+</div>
 
-
-<!-- Birthday Song -->
-<audio controls autoplay loop>
-    <source src="birthday.mp3">
+<!-- Birthday Song (click once to play if autoplay blocked) -->
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+document.addEventListener("click", () => {
+    document.getElementById("music").play();
+}, { once: true });
+</script>
+
 <div class="message">
-    <p>
-        Happy 18th Birthday, Vedi! 🎂✨  
-       On this day ,i wnna wish you all the happiness darloo,
-        I wish tu hamesha khush rhe and always have a smile on your face,
-        I wish apn dono teri success sath me celebrate kre your first trip,
-        se lekar everything, tu hmesha aesi hi rhe yrr always happy and ,
-        teri eyes se ab hamesha khushi ke aasu hi nikle aur tu hamesha ,
-        slay krti rhe .meri frakals. 💕🌸
-    </p>
+<p>
+Happy 18th Birthday, Vedi! 🎂✨  
+On this day I wanna wish you all the happiness darloo.  
+Tu hamesha khush rahe, smile karti rahe,  
+aur hum dono milke teri har success celebrate kare.  
+Tu hamesha aisi hi slay karti rahe meri frakals 💕🌸
+</p>
 </div>
 
 <h2>📸 Memories</h2>
 
 <div class="gallery">
-    <img src="bday1">
-    <img src="bday2">
-    <img src="bday3">
+    <img src="bday1.jpg">
+    <img src="bday2.jpg">
+    <img src="bday3.jpg">
 </div>
 
 <footer>
-    💖 from a cutie to a pyaruuu 💖
+💖 from a cutie to a pyaruuu 💖
 </footer>
 
 </body>
