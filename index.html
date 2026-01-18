@@ -64,15 +64,15 @@ h2 {
 /* Image inside heart */
 .heart img {
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 110px;  /* Increased from 90px */
+    height: 110px; /* Increased from 90px */
     object-fit: cover;
     top: 50%;
     left: 50%;
-    transform: rotate(45deg) translate(-50%, -50%);
-    border-radius: 50%;
+    transform: translate(-50%, -50%);  /* Removed rotate(45deg) for better heart shape fit */
     border: 3px solid white;
     box-shadow: 0 0 10px white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  /* Heart shape */
     z-index: 2;   /* above heart */
 }
 
@@ -120,7 +120,10 @@ footer {
     .heart::before, .heart::after { width: 150px; height: 135px; }
     .heart::before { top: -75px; }
     .heart::after { left: 75px; }
-    .heart img { width: 70px; height: 70px; }
+    .heart img { 
+        width: 80px;  /* Increased from 70px */
+        height: 80px; /* Increased from 70px */
+    }
     .gallery img { width: 150px; height: 150px; }
     .message { font-size: 1rem; padding: 20px; }
 }
@@ -138,7 +141,7 @@ footer {
 </div>
 
 <!-- Birthday Song (click once to play if autoplay blocked) -->
-<audio id="music" loop controls> <!-- Added 'controls' as fallback -->
+<audio id="music" loop> <!-- Removed 'controls' to hide play/pause button -->
     <source src="birthday.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
@@ -167,9 +170,9 @@ Tu hamesha aisi hi slay karti rahe meri frakals 💕🌸
 <h2>📸 Memories</h2>
 
 <div class="gallery">
-    <img src="bday1.jpg" alt="Birthday memory 1">
-    <img src="bday2.jpg" alt="Birthday memory 2">
-    <img src="bday3.jpg" alt="Birthday memory 3">
+    <img src="bday1">
+    <img src="bday2">
+    <img src="bday3">
 </div>
 
 <footer>
